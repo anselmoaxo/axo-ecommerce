@@ -5,6 +5,7 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod01.jpg",
+    feminino: true,
   },
   {
     id: "2",
@@ -12,6 +13,7 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod02.jpg",
+    feminino: true,
   },
 
   {
@@ -20,6 +22,7 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod03.jpg",
+    feminino: true,
   },
 
   {
@@ -28,6 +31,7 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod04.jpg",
+    feminino: false,
   },
   {
     id: " 5",
@@ -35,6 +39,7 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod05.jpg",
+    feminino: false,
   },
   {
     id: "6",
@@ -42,5 +47,14 @@ export const catalogo = [
     marca: "Eletronicos AXO",
     preco: 250,
     nomeArquivoImagem: "prod06.jpg",
+    feminino: false,
   },
 ];
+
+export function salvarLocalStorage(chave, informacao) {
+  localStorage.setItem(chave, JSON.stringify(informacao));
+}
+
+export function lerLocalStorage(chave) {
+  return JSON.parse(localStorage.getItem(chave));
+}
