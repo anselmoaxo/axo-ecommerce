@@ -12,24 +12,33 @@ function fecharCarrinho() {
   document.getElementById("carrinho").classList.add("right-[-360px]");
 }
 
+function irParaCheckout() {
+  if (Object.keys(idsProdutoCarrinhoComQuantidade).length === 0) {
+    return;
+  }
+  window.location.href = window.location.origin + "/checkout.html";
+}
+
 export function inicializarCarrinho() {
   const botaoFecharCarrinho = document.getElementById("fechar-carrinho");
   const botaoAbrirCarrinho = document.getElementById("abrir-carrinho");
+  const botaoIrParaCheckout = document.getElementById("finalizar-compra");
 
   botaoFecharCarrinho.addEventListener("click", fecharCarrinho);
   botaoAbrirCarrinho.addEventListener("click", abrirCarrinho);
+  botaoIrParaCheckout.addEventListener("click", irParaCheckout);
 }
 
 function removerDoCarrinho(idProduto) {
   delete idsProdutoCarrinhoComQuantidade[idProduto];
-  salvarLocalStorage("carrinho:", idsProdutoCarrinhoComQuantidade);
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto) {
   idsProdutoCarrinhoComQuantidade[idProduto]++;
-  salvarLocalStorage("carrinho:", idsProdutoCarrinhoComQuantidade);
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
@@ -40,7 +49,7 @@ function decrementarQuantidadeProduto(idProduto) {
   }
 
   idsProdutoCarrinhoComQuantidade[idProduto]--;
-  salvarLocalStorage("carrinho:", idsProdutoCarrinhoComQuantidade);
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   atualizarPrecoCarrinho();
   atualizarInformacaoQuantidade(idProduto);
 }
@@ -126,7 +135,7 @@ export function adicionarAoCarrinho(idProduto) {
     return;
   }
   idsProdutoCarrinhoComQuantidade[idProduto] = 1;
-  salvarLocalStorage("carrinho:", idsProdutoCarrinhoComQuantidade);
+  salvarLocalStorage("carrinho", idsProdutoCarrinhoComQuantidade);
   desenharProdutoNoCarrinho(idProduto);
 
   atualizarPrecoCarrinho();
