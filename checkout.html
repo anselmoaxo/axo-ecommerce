@@ -13,12 +13,181 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body class="bg-stone-400 flex flex-col stick">
+  <body class="bg-stone-300 flex flex-col h-screen">
     <header
-      class="flex text-xl bg-slate-950 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0 z-10"
+      class="flex text-xl bg-slate-800 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0 z-10"
     >
-      <img class="h-12" src="./assets/img/logo1.jpg" alt="" width="80px" />
+      <img
+        class="h-12"
+        src="./assets/img/logo01.svg"
+        alt="Carrinho de de compra Logo"
+      />
     </header>
-    <main class="flex flex-col items-center bg-slate-200"></main>
+    <form class="flex w-100 px-5 gap-4 py-10 grow">
+      <section id="dados-usuario" class="w-1/3 bg-white rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Seus Dados</p>
+        <div class="flex flex-col px-10 p-5">
+          <label class="font-bold text-sm mb-2" for="nome">Nome</label>
+          <input
+            type="text"
+            id="nome"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="Anselmo Xavier"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col px-10 p-2">
+          <label class="font-bold text-sm mb-2" for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="anselmo@anselmo.com.br"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col px-10 p-5">
+          <label class="font-bold text-sm mb-2" for="telefone"
+            >Telefone Contato</label
+          >
+          <input
+            type="tel"
+            id="telefone"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="(11) 99999-9999"
+            required
+          />
+        </div>
+      </section>
+      <section id="pagamento-entrega" class="w-1/3 bg-white rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+        <div class="flex flex-col px-10 p-5">
+          <label class="font-bold text-sm mb-2" for="numero-cartao"
+            >Número do Cartão</label
+          >
+          <input
+            type="text"
+            id="numero-cartao"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="1111 1111 1111 1111"
+            required
+          />
+        </div>
+        <div class="flex">
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="codigo-verificador"
+              >CVV</label
+            >
+            <input
+              type="text"
+              id="codigo-verificador"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="222"
+              required
+            />
+          </div>
+
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="data-validade"
+              >Data de Validade
+            </label>
+            <input
+              type="text"
+              id="data-validade"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="10/24"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col px-10 p-5">
+          <div id="feedback" class="mb-5 text-center text-red-600"></div>
+          <label class="font-bold text-sm mb-2" for="cep">CEP</label>
+          <input
+            type="text"
+            id="cep"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="Ex: 00000-000"
+            required
+          />
+        </div>
+        <div class="flex flex-col px-10 p-5">
+          <label class="font-bold text-sm mb-2" for="endereco">Endereço</label>
+          <input
+            type="text"
+            id="endereco"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="Ex: Av. São Paulo"
+            required
+          />
+        </div>
+        <div class="flex">
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="complemento"
+              >Complemento
+            </label>
+            <input
+              type="text"
+              id="complemento"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="Ex: Apto 19 bl 999"
+            />
+          </div>
+
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="numero">Numero </label>
+            <input
+              type="number"
+              id="numero"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="11"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex flex-col px-10 p-5">
+          <label class="font-bold text-sm mb-2" for="bairro">Bairro</label>
+          <input
+            type="text"
+            id="bairro"
+            class="rounded-sm px-2 border-2 border-slate-200 py-1"
+            placeholder="Ex: Jardim Paulista"
+            required
+          />
+        </div>
+
+        <div class="flex">
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="cidade">Cidade </label>
+            <input
+              type="text"
+              id="cidade"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="Guarulhos"
+              required
+            />
+          </div>
+
+          <div class="flex flex-col px-10 p-5 w-1/2">
+            <label class="font-bold text-sm mb-2" for="uf">Estado </label>
+            <input
+              type="text"
+              id="uf"
+              class="rounded-sm px-2 border-2 border-slate-200 py-1"
+              placeholder="São Paulo"
+              required
+            />
+          </div>
+        </div>
+      </section>
+      <section
+        id="produto-checkout"
+        class="w-1/3 bg-white rounded-lg py-5"
+      ></section>
+    </form>
+    <script type="module" src="buscaCep.js"></script>
   </body>
 </html>
