@@ -5,6 +5,8 @@ import {
   salvarLocalStorage,
 } from "./src/utilidades";
 
+import { atualizarPrecoCarrinho } from "./src/menuCarrinho";
+
 function desenharProdutosCheckout() {
   const idsProdutoCarrinhoComQuantidade = lerLocalStorage("carrinho") ?? {};
   for (const idProduto in idsProdutoCarrinhoComQuantidade) {
@@ -15,6 +17,7 @@ function desenharProdutosCheckout() {
     );
   }
 }
+atualizarPrecoCarrinho();
 
 function finalizarCompra(evento) {
   evento.preventDefault();

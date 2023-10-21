@@ -3,17 +3,17 @@ import { adicionarAoCarrinho } from "./menuCarrinho";
 
 export function renderizarCatalogo() {
   for (const produtoCatalogo of catalogo) {
-    const cartaoProduto = `<div class=' border-solid w-48 m-2 flex flex-col p-2 justify-between shadow-xl shadow-slate-400 rounded-lg group ${
+    const cartaoProduto = `<div class='  bg-slate-200 border-solid w-48 m-2 flex flex-col p-2 justify-between shadow-xl shadow-slate-500 rounded-lg group ${
       produtoCatalogo.feminino ? "feminino" : "masculino"
     }' id="card-produto-${produtoCatalogo.id}">
-        <img
+        <img 
         src="./assets/img/${produtoCatalogo.nomeArquivoImagem}"
         alt="Produto 1 do Magazine Hashtag."
         class='group-hover:scale-110 duration-300 my-3 rounded-lg '
         />
         <p class='text-sm'>${produtoCatalogo.marca}</p>
         <p class='text-sm'>${produtoCatalogo.nome}</p>
-        <p class='text-sm'>$${produtoCatalogo.preco}</p>
+        <p class='text-sm'>R$${produtoCatalogo.preco}</p>
         <button id='adicionar-${
           produtoCatalogo.id
         }' class='bg-slate-950 hover:bg-slate-700 text-slate-200'
